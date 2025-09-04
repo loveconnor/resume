@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2025.9.3)  3 SEP 2025 19:57
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2025.9.3)  3 SEP 2025 19:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/conno/projects/resume/main.tex
-(c:/Users/conno/projects/resume/main.tex
+**c:/Users/conno/projects/resume/resume.tex
+(c:/Users/conno/projects/resume/resume.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
 (C:\Users\conno\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -248,8 +248,8 @@ File: l3backend-xetex.def 2024-01-04 L3 backend support: XeTeX
 \g__pdf_backend_object_int=\count278
 \g__pdf_backend_annotation_int=\count279
 \g__pdf_backend_link_int=\count280
-) (main.aux)
-\openout1 = `main.aux'.
+) (resume.aux)
+\openout1 = `resume.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
 LaTeX Font Info:    ... okay on input line 17.
@@ -313,9 +313,9 @@ LaTeX Font Info:    ... okay on input line 17.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring OFF on input line 17.
-(main.out) (main.out)
+(resume.out) (resume.out)
 \@outlinefile=\write3
-\openout3 = `main.out'.
+\openout3 = `resume.out'.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 23.
@@ -325,21 +325,21 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 23.
  [1
 
-] [2] (main.aux)
+] [2] (resume.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
-Package rerunfilecheck Info: File `main.out' has not changed.
+Package rerunfilecheck Info: File `resume.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
  8936 strings out of 409617
- 138172 string characters out of 5774014
+ 138212 string characters out of 5774014
  1936191 words of memory out of 5000000
  30968 multiletter control sequences out of 15000+600000
  560300 words of font info for 49 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 72i,6n,79p,1224b,318s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,6n,79p,1226b,318s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (2 pages).
+Output written on resume.pdf (2 pages).
