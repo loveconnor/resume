@@ -1,0 +1,374 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.35in]{geometry}
+\usepackage{multicol,amsmath,amssymb,mathtools}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1.5pt}
+\begin{document}
+\footnotesize
+\begin{center}
+{\Large Math 1172 — Midterm 1 Cheatsheet (Front \& Back)}\\
+\emph{Built to be self-sufficient: set-ups, identities, missing (anti)derivatives, mini-examples, and checklists.}\\
+\emph{Basic antiderivatives already on the official sheet are intentionally omitted.}
+\end{center}
+
+\begin{multicols}{2}
+
+% ============================================================
+\section*{0) Rapid Rules You’ll Actually Use}
+\textbf{Product} $(uv)'=u'v+uv'$. \quad
+\textbf{Quotient} $\displaystyle \Big(\frac{u}{v}\Big)'=\frac{u'v-uv'}{v^2}$.\quad
+\textbf{Chain} $(f\!\circ\! g)'=f'(g)\,g'$.
+\[
+\frac{d}{dx}a^x=a^x\ln a,\quad
+\frac{d}{dx}\log_a x=\frac{1}{x\ln a},\quad
+\frac{d}{dx}\ln|g|=\frac{g'}{g}.
+\]
+\textbf{Inverse trig:}\;
+$\dfrac{d}{dx}\arcsin x=\dfrac{1}{\sqrt{1-x^2}}$,\;
+$\dfrac{d}{dx}\arccos x=-\dfrac{1}{\sqrt{1-x^2}}$,\;
+$\dfrac{d}{dx}\arctan x=\dfrac{1}{1+x^2}$.
+
+\textbf{Missing antiderivatives (not on basic list):}
+\[
+\int \tan x\,dx=-\ln|\cos x|+C,\quad
+\int \cot x\,dx=\ln|\sin x|+C,
+\]
+\[
+\int \sec x\,dx=\ln|\sec x+\tan x|+C,\quad
+\int \csc x\,dx=-\ln|\csc x+\cot x|+C,
+\]
+\[
+\int \sin(kx)\,dx=-\frac{1}{k}\cos(kx)+C,\;
+\int \cos(kx)\,dx=\frac{1}{k}\sin(kx)+C,
+\]
+\[
+\int e^{kx}\,dx=\frac{1}{k}e^{kx}+C,\;
+\int \frac{1}{ax+b}\,dx=\frac{1}{a}\ln|ax+b|+C.
+\]
+\textbf{Chain-pattern spotting:}\;
+$\int f'(g(x))\,g'(x)\,dx=f(g(x))+C$ (e.g.\ $\int\! \frac{2x}{1+x^2}dx=\ln(1+x^2)+C$).
+
+% ============================================================
+\section*{1) Trig Identities (minimal but mighty)}
+\textbf{Pythagorean:}\;
+$\sin^2x+\cos^2x=1$,\;
+$1+\tan^2x=\sec^2x$,\;
+$\sec^2x-\tan^2x=1$.
+\[
+\sin(2x)=2\sin x\cos x,\quad
+\cos(2x)=\cos^2x-\sin^2x=1-2\sin^2x=2\cos^2x-1.
+\]
+\textbf{Power-reduction:}\;
+$\sin^2x=\tfrac{1}{2}(1-\cos 2x)$,\;
+$\cos^2x=\tfrac{1}{2}(1+\cos 2x)$.
+\[
+\sin(A\!\pm\!B)=\sin A\cos B\pm\cos A\sin B,\quad
+\cos(A\!\pm\!B)=\cos A\cos B\mp\sin A\sin B.
+\]
+\textbf{Exact trig values:}
+\[
+\begin{array}{c|ccccc}
+\theta & 0 & \frac{\pi}{6} & \frac{\pi}{4} & \frac{\pi}{3} & \frac{\pi}{2}\\\hline
+\sin\theta & 0 & \tfrac12 & \tfrac{\sqrt2}{2} & \tfrac{\sqrt3}{2} & 1 \\
+\cos\theta & 1 & \tfrac{\sqrt3}{2} & \tfrac{\sqrt2}{2} & \tfrac12 & 0 \\
+\tan\theta & 0 & \tfrac{1}{\sqrt3} & 1 & \sqrt3 & \text{undef}
+\end{array}
+\]
+
+% ============================================================
+\section*{2) Area Between Curves}
+\textbf{W.r.t.\ $x$:}\;
+$A=\displaystyle\int_a^b\big(y_{\text{top}}-y_{\text{bot}}\big)\,dx$;\;
+\textbf{w.r.t.\ $y$:}\;
+$A=\displaystyle\int_c^d\big(x_{\text{right}}-x_{\text{left}}\big)\,dy$.
+\textbf{Split} at intersection(s) when top/bottom (or right/left) switch.
+
+\textbf{Mini-Example (swap top/bottom)}:
+Between $y=x$ and $y=x^2$ on $[0,1]$:
+\(
+A=\int_0^1 (x-x^2)dx=\tfrac{1}{6}.
+\)
+
+\textbf{Intersection tricks:} set $f(x)=g(x)$; if messy, consider factoring, completing square, or switching to $y$-slices.
+
+% ============================================================
+\section*{3) Accumulated Cross-Sections}
+Perpendicular slices; area depends on shape:
+\[
+V=\int \text{Area(slice)}\,ds,\quad s=x \text{ or } y.
+\]
+\textbf{Shapes:}\;
+square $A=w^2$;\;
+equilateral tri.\ $A=\frac{\sqrt3}{4}w^2$;\;
+semicircle $A=\frac{\pi}{8}w^2$;\;
+isos.\ right tri.\ $A=\frac12 w^2$.\;
+(\emph{$w$ = distance between bounding curves along the slicing direction.})
+
+\textbf{Mini-Example (semicircles, vertical slices):}
+Region $y=\sqrt{x}$ to $y=0$ on $[0,4]$;\;
+$w=\sqrt{x}$;\;
+$V=\frac{\pi}{8}\!\int_0^4 x\,dx=\pi$.
+
+% ============================================================
+\section*{4) Solids of Revolution}
+\textbf{Washers (slices $\perp$ axis):}\;
+$V=\pi\!\int (R_{\rm out}^2-R_{\rm in}^2)\,ds$.
+\quad
+\textbf{Shells (slices $\parallel$ axis):}\;
+$V=2\pi\!\int (\text{radius})(\text{height})\,ds$.
+
+\textbf{Radii templates:}
+About $x=c$: with $x$-slices (shells) radius $=|x-c|$, height $=\text{top}(x)-\text{bot}(x)$.
+About $y=k$: with $x$-slices (washers) $R=|\,\text{curve}-k\,|$; if using $y$-slices, swap roles.
+
+\textbf{Mini-Example (washers about $y=3$):}
+Region $y=\sqrt{x}$ to $0$ on $[0,4]$:
+$R_{\rm out}=3$, $R_{\rm in}=|3-\sqrt{x}|$,
+\(
+V=\pi\!\int_0^4(9-(3-\sqrt{x})^2)\,dx=24\pi.
+\)
+
+\textbf{Mini-Example (shells about $x=4$):}
+Region between $y=x$ and $y=0$ on $x\in[0,3]$:
+radius $=|x-4|=4-x$, height $=x-0$,
+\(
+V=2\pi\!\int_0^3 (4-x)\,x\,dx=2\pi\Big[2x^2-\tfrac13x^3\Big]_0^3=\tfrac{30}{1}\pi.
+\)
+
+% ============================================================
+\section*{5) Arc Length}
+\textbf{Graph $y=f(x)$:}\;
+$L=\displaystyle\int_a^b\sqrt{1+[f'(x)]^2}\,dx$.
+\quad
+\textbf{Inverse $x=g(y)$:}\;
+$L=\displaystyle\int_c^d\sqrt{1+[g'(y)]^2}\,dy$.
+\quad
+\textbf{Parametric:}\;
+$L=\displaystyle\int_\alpha^\beta\sqrt{(x')^2+(y')^2}\,dt$.
+
+\textbf{Perfect-square trick:}\; if $1+[f'(x)]^2$ simplifies to $(ax+b)^2$, length becomes $\int |ax+b|\,dx$.
+
+\textbf{Mini-Example:}\;
+$y=\frac13 x^{3/2}$ on $[0,4]$:
+$f'(x)=\tfrac12 x^{1/2}$,
+$L=\int_0^4\sqrt{1+\tfrac14 x}\,dx=\frac{8}{3}(2^{3/2}-1)$.
+
+% ============================================================
+\section*{6) Physical Apps (Mass/Work)}
+\textbf{Mass (1D wire):}\; $m=\int_a^b \rho(x)\,dx$.
+\smallskip
+
+\textbf{Work to pump:}\;
+$W=\displaystyle\int \rho g\,A(y)\,D(y)\,dy$.
+\textit{Units:} $\rho g$ (weight density, e.g.\ lb/ft$^3$), $A(y)$ (ft$^2$), $D(y)$ (ft) $\Rightarrow$ ft-lb.
+
+\textbf{Mini-Example (cylinder, pump over top):}
+$A(y)=\pi R^2$, $D(y)=H-y$:
+$W=\rho g\pi R^2\!\int_0^H(H-y)\,dy=\frac12\rho g\pi R^2H^2$.
+
+\textbf{Mini-Example (sphere radius $R$; bottom at $y=0$):}
+Slice at height $y$: $r(y)=\sqrt{2Ry-y^2}$,\;
+$A(y)=\pi r(y)^2=\pi(2Ry-y^2)$,\; outlet at $y=H$:
+\(
+W=\rho g\!\int_{0}^{2R}\!\pi(2Ry-y^2)\,(H-y)\,dy.
+\)
+
+% ============================================================
+\section*{7) Integration by Parts (IBP)}
+$\displaystyle \int u\,dv=uv-\int v\,du$, choose $u$ by \textbf{LIATE}.
+
+\textbf{Tabular IBP (poly $\times$ trig/exp):}
+For $\int x^2 e^{x}dx$:
+
+\smallskip
+\begin{tabular}{r|l}
+$u$ & $dv$\\\hline
+$x^2$ & $e^{x}dx$\\
+$2x$ & $e^{x}dx$\\
+$2$ & $e^{x}dx$\\
+$0$ & $e^{x}dx$
+\end{tabular}
+\hspace{6pt}
+$\Rightarrow\; x^2e^x-2xe^x+2e^x+C$.
+
+\textbf{Mini-Examples:}
+\[
+\int x e^{2x}dx=\tfrac12 x e^{2x}-\tfrac14 e^{2x}+C,\qquad
+\int x\sin(2x)dx=-\tfrac12 x\cos(2x)+\tfrac14\sin(2x)+C.
+\]
+
+% ============================================================
+\section*{8) Trig Integrals — Picking the Method}
+\textbf{Odd $\sin$:} save one $\sin$, convert rest, $u=\cos x$.
+\textbf{Odd $\cos$:} save one $\cos$, convert rest, $u=\sin x$.
+\textbf{Both even:} power-reduction.
+\textbf{$\sec/\tan$:} if $\tan$ odd $\Rightarrow$ save $\sec^2x\,dx$ ($u=\tan x$); if $\sec$ even $\Rightarrow$ save $\sec^2x\,dx$.
+
+\textbf{Mini-Examples:}
+\[
+\int \sin^3x\,dx=\int \sin x(1-\cos^2x)\,dx,\; u=\cos x \Rightarrow \int (1-u^2)(-du).
+\]
+\[
+\int \sec^4x\,dx=\int \sec^2x\cdot \sec^2x\,dx,\; u=\tan x \Rightarrow \int (1+u^2)\,du.
+\]
+
+% ============================================================
+\section*{9) Trig Substitution — Map \& Back-Sub}
+\[
+\begin{array}{l|l}
+\sqrt{a^2-x^2} & x=a\sin\theta,\;\sqrt{a^2-x^2}=a\cos\theta \\[2pt]
+\sqrt{a^2+x^2} & x=a\tan\theta,\;\sqrt{a^2+x^2}=a\sec\theta \\[2pt]
+\sqrt{x^2-a^2} & x=a\sec\theta,\;\sqrt{x^2-a^2}=a\tan\theta
+\end{array}
+\]
+\textbf{Completing square first} if needed: $x^2+bx+c=(x+\tfrac{b}{2})^2+\Big(c-(\tfrac{b}{2})^2\Big)$.
+
+\textbf{Mini-Examples:}
+\[
+\int \frac{dx}{\sqrt{9-x^2}},\; x=3\sin\theta\Rightarrow \arcsin(x/3)+C.
+\]
+\[
+\int \frac{x^2}{\sqrt{4x^2-25}}\,dx,\; x=\tfrac{5}{2}\sec\theta,\; \sqrt{4x^2-25}=\tfrac{5}{2}\tan\theta.
+\]
+
+% ============================================================
+\section*{10) Partial Fractions (PFD)}
+\textbf{Proper?} If $\deg N\ge \deg D$, long divide first.
+\textbf{Factor $D$} over $\mathbb{R}$: linears $(x-a)$, irreducible quadratics $(x^2+bx+c)$.
+\[
+\frac{P(x)}{(x-a)(x-b)}=\frac{A}{x-a}+\frac{B}{x-b},\quad
+\frac{P}{(x-a)^k}=\sum_{j=1}^k \frac{A_j}{(x-a)^j},
+\]
+\[
+\frac{P(x)}{(x^2+bx+c)^m}=\sum_{j=1}^m \frac{A_jx+B_j}{(x^2+bx+c)^j}.
+\]
+\textbf{Heaviside (distinct linears):}\;
+$A$ for $\frac{A}{x-a}$ is $N(a)/D'(a)$ when $D=(x-a)\tilde D$.
+
+\textbf{Mini-Examples (form only):}
+\[
+\frac{3x+1}{x(x-2)(x^2+1)}=\frac{A}{x}+\frac{B}{x-2}+\frac{Cx+D}{x^2+1}.
+\]
+\[
+\frac{2x^2+1}{(x-1)^2(x+3)}=\frac{A}{x-1}+\frac{B}{(x-1)^2}+\frac{C}{x+3}.
+\]
+
+% ============================================================
+\section*{11) Improper Integrals \& FTC sanity}
+\textbf{Improper if} $\infty$ limit(s) or vertical asymptote in $[a,b]$.
+\[
+\int_a^\infty f=\lim_{t\to\infty}\int_a^t f,\quad
+\int_a^b f=\lim_{t\to c^-}\int_a^t f+\lim_{t\to c^+}\int_t^b f.
+\]
+\textbf{$p$-tests:}\;
+$\int_1^\infty \frac{dx}{x^p}$ converges iff $p>1$;\;
+$\int_0^1 \frac{dx}{x^p}$ converges iff $p<1$.
+
+\textbf{Comparison near} $\infty$: compare to $\frac{1}{x^p}$.
+Near $0^+$: compare to $\frac{1}{x^p}$.
+\textit{Monotone positive} integrands simplify comparison.
+
+\textbf{Mini-Examples:}
+\[
+\int_1^\infty \frac{dx}{x(\ln x)^2}\ \text{converges (stronger than }1/x).
+\quad
+\int_0^1 \frac{dx}{\sqrt{x}}=2\ (\text{converges}).
+\]
+
+% ============================================================
+\section*{12) Fast Set-Up Templates (Fill \& Go)}
+\textbf{Area (x-slices):}\;
+$A=\displaystyle \int_a^b\big(f_{\text{top}}(x)-g_{\text{bot}}(x)\big)\,dx$.
+\smallskip
+
+\textbf{Cross-sections (vertical):}\;
+$V=\displaystyle\int_a^b\kappa\,[\text{top}(x)-\text{bot}(x)]^2\,dx$,
+$\ \kappa\in\{1,\tfrac{\sqrt3}{4},\tfrac{\pi}{8},\tfrac12\}$.
+\smallskip
+
+\textbf{Washers about $x=c$ (vertical axis, $x$-slices):}
+\[
+V=\pi\int_a^b\!\Big((x\!-\!c)_{\rm out}^2-(x\!-\!c)_{\rm in}^2\Big)\,dx.
+\]
+\textbf{Shells about $x=c$ (vertical axis, $x$-slices):}
+\[
+V=2\pi\int_a^b |x-c|\cdot(\text{top}-\text{bot})\,dx.
+\]
+\textbf{Work (pump to height $H$):}\;
+$W=\displaystyle \rho g\int \!A(y)\,[H-y]\;dy$.
+\smallskip
+
+\textbf{Arc length (graph):}\;
+$L=\displaystyle\int_a^b\sqrt{1+[f'(x)]^2}\,dx$.
+\smallskip
+
+\textbf{IBP:}\; choose $u$ by LIATE; $dv$ is the rest.
+\smallskip
+
+\textbf{Trig-int choice:}\; odd $\sin/\cos$ $\Rightarrow$ save one; both even $\Rightarrow$ reduce.
+\smallskip
+
+\textbf{Trig-sub map:}\; $\sqrt{a^2-x^2}\!\to\! x=a\sin\theta$;\;
+$\sqrt{a^2+x^2}\!\to\! x=a\tan\theta$;\;
+$\sqrt{x^2-a^2}\!\to\! x=a\sec\theta$.
+\smallskip
+
+\textbf{PFD:}\; long divide if needed; linear factors $\to$ constants, irreducible quadratics $\to Ax+B$.
+
+% ============================================================
+\section*{13) Algebra/Calc Micro-Toolkit (saves minutes)}
+\textbf{Completing square:}\;
+$x^2+bx+c=(x+\tfrac{b}{2})^2+\big(c-(\tfrac{b}{2})^2\big)$.
+\textbf{Factoring patterns:}\; $a^2-b^2=(a-b)(a+b)$;\;
+$x^3-y^3=(x-y)(x^2+xy+y^2)$.
+\textbf{Linearization:}\; for small $h$, $\ln(1+h)\approx h$ (for quick reasonableness checks).
+
+\textbf{Solving intersections quickly:}\;
+Set equal, move all to one side, try: common factoring, quadratic formula, or switching variables.
+
+\textbf{Domain reminders:}\; square roots $\Rightarrow$ inside $\ge0$;\; denominators $\neq0$;\; logs $\Rightarrow$ inside $>0$.
+
+\textbf{Inverse-function derivative:}\;
+If $y=f(x)$ invertible, then $\dfrac{dy}{dx}=\dfrac{1}{f'(f^{-1}(y))}$. (\emph{Useful in arc length/implicit spots.})
+
+% ============================================================
+\section*{14) Worked Micro-Checks (answer included)}
+\textbf{A:} $\displaystyle \int \frac{2x}{1+x^2}\,dx=\ln(1+x^2)+C$.\quad
+\textbf{B:} $\displaystyle \int \tan x\,dx=-\ln|\cos x|+C$.\quad
+\textbf{C:} $\displaystyle \int_0^{\pi/2}\sin^2x\,dx=\frac{\pi}{4}$ (power-reduction).
+\smallskip
+
+\textbf{D (PFD form):}\;
+$\displaystyle \frac{x^2+3}{(x-1)^2(x^2+4)}=\frac{A}{x-1}+\frac{B}{(x-1)^2}+\frac{Cx+D}{x^2+4}$.
+\smallskip
+
+\textbf{E (shells about $x=1$):}\;
+Region between $y=x^2$ and $y=x$ on $[0,1]$:
+radius $=|x-1|=1-x$, height $=x-x^2$,
+\(
+V=2\pi\!\int_0^1 (1-x)(x-x^2)\,dx
+=2\pi\Big[\tfrac{1}{12}\Big]=\tfrac{\pi}{6}.
+\)
+
+\textbf{F (arc length set-up only):}\;
+$y=\ln(\cosh x)$ on $[0,a]$:
+$y'=\tanh x$, so $L=\int_0^a \sqrt{1+\tanh^2x}\,dx=\int_0^a \operatorname{sech}^{-1}\!x\ \text{(recognize simplification if known)}$.
+
+% ============================================================
+\section*{15) Exam Flow Hints (decision cheats)}
+\textbf{Area} $\to$ top-bottom or right-left; \textbf{split} if ordering changes.\\
+\textbf{Volume:}
+axis vertical $\Rightarrow$
+$x$-slices shells / $y$-slices washers;
+axis horizontal $\Rightarrow$
+$x$-slices washers / $y$-slices shells.
+Pick the slicing that avoids solving hard inverses.\\
+\textbf{Work:} pick vertical coordinate, compute $A(y)$ from geometry, $D(y)$ to outlet.\\
+\textbf{Arc length:} check if $1+(f')^2$ simplifies; else substitution.\\
+\textbf{Trig integrals:} odd/even rules; reduce before expanding.\\
+\textbf{Trig sub:} match radicand to the map; complete square first.\\
+\textbf{PFD:} divide $\Rightarrow$ factor $\Rightarrow$ write form $\Rightarrow$ solve constants (cover-up where allowed).\\
+\textbf{IBP:} if it gets worse, change $u$ (LIATE) or try substitution first.
+
+\end{multicols}
+\end{document}
