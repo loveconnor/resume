@@ -1,16 +1,18 @@
 \documentclass[10pt]{article}
 
 % ---------- PACKAGES ----------
-\usepackage[margin=0.4in]{geometry}
+\usepackage[margin=0.6in]{geometry}
 \usepackage[hidelinks]{hyperref}
 \usepackage{enumitem}
 \usepackage{parskip}
 \usepackage{titlesec}
 \usepackage{tabularx}
 
-% ---------- SECTION STYLES ----------
+% ---------- PAGE AND SECTION STYLES ----------
+\pagestyle{empty}
 \setlength{\parindent}{0pt}
-\setlist[itemize]{leftmargin=*, topsep=2pt, itemsep=2pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=*, topsep=2pt, itemsep=1.5pt, parsep=0pt, partopsep=0pt}
 \titleformat{\section}{\bfseries\large}{}{0pt}{}[\titlerule]
 \titlespacing*{\section}{0pt}{6pt}{4pt}
 
@@ -18,103 +20,81 @@
 
 % ---------- HEADER ----------
 \begin{center}
-  {\huge \textbf{Connor Love}}\\[4pt]
-  \footnotesize
-  \begin{tabular}{@{}c@{\hspace{0.8em}\textbar\hspace{0.8em}}c@{\hspace{0.8em}\textbar\hspace{0.8em}}c@{\hspace{0.8em}\textbar\hspace{0.8em}}c@{\hspace{0.8em}\textbar\hspace{0.8em}}c@{}}
-    \href{mailto:loveconnor2005@gmail.com}{loveconnor2005@gmail.com} &
-    (216) 318-4899 &
-    \href{https://linkedin.com/in/loveconnor/}{linkedin.com/in/loveconnor/} &
-    \href{https://github.com/loveconnor}{github.com/loveconnor} &
-    \href{https://connorlove.com}{connorlove.com}
-  \end{tabular}
+  {\LARGE \textbf{Connor Love}}\\[3pt]
+  \small
+  Columbus, OH \quad | \quad
+  \href{mailto:loveconnor2005@gmail.com}{loveconnor2005@gmail.com} \quad | \quad
+  (216) 318-4899\\[2pt]
+  \href{https://www.linkedin.com/in/loveconnor}{linkedin.com/in/loveconnor} \quad | \quad
+  \href{https://github.com/loveconnor}{github.com/loveconnor} \quad | \quad
+  \href{https://www.connorlove.com}{connorlove.com}
 \end{center}
 
 % ---------- EDUCATION ----------
 \section*{Education}
-\textbf{The Ohio State University} — Columbus, OH\\
-Bachelor of Science in Computer Science and Engineering \,|\, Expected May 2028
+\textbf{The Ohio State University} \hfill Columbus, OH\\
+Bachelor of Science in Computer Science and Engineering \hfill Expected May 2028\\
+Dean's List, Autumn 2025
 
-\vspace{4pt}
-\textbf{Kent State University} — Kent, OH
-\begin{itemize}
-  \item Computer Science coursework
-  \item GPA: 3.98
-  \item Aug. 2024 – Jul. 2025
-\end{itemize}
-
-% ---------- RESEARCH & SCHOLARSHIPS ----------
-\section*{Research \& Scholarships}
-\textbf{Choose Ohio First Scholar — Kent State University (2024–2025)}
-\begin{itemize}
-  \item Awarded a competitive STEM scholarship.
-  \item Researched keyword-based community search in spatial-social networks.
-  \item Designed algorithms and a user interface to identify cohesive communities.
-  \item Presented a research poster at the Kent State University Conference (Apr 2025).
-\end{itemize}
-
-% ---------- HONORS & COMPETITIONS ----------
-\section*{Honors \& Competitions}
-\textbf{3rd Place} — Kent Hack Enough Hackathon (Feb 2025)\\
-Project: EduSynapse
-
-% ---------- PROJECTS ----------
-\section*{Projects}
-
-\textbf{The Lyceum Project} \,|\, Next.js, Node.js, Supabase, TypeScript, Tailwind CSS, OpenAI
-\begin{itemize}
-  \item Built an AI-powered learning platform that creates personalized learning paths based on user goals and background.
-  \item Developed interactive coding and math labs with real-time feedback.
-  \item Added a context-aware AI tutor to guide users step by step through problems.
-  \item Designed progress tracking, reflections, and reminders to support long-term learning.
-  \item Integrated a verified academic source registry to improve accuracy and reduce AI errors.
-\end{itemize}
-
-\textbf{LoveChat} \,|\, TypeScript, React, Tailwind CSS, PostgreSQL
-\begin{itemize}
-  \item Built an advanced AI chat application supporting multiple models and workflows.
-  \item Implemented customizable personas, automation tools, and collaboration features.
-\end{itemize}
+\vspace{3pt}
+\textbf{Kent State University} \hfill Kent, OH\\
+Computer Science coursework; GPA: 3.98 \hfill Aug. 2024 -- Jul. 2025
 
 % ---------- EXPERIENCE ----------
 \section*{Experience}
-
-\textbf{Freelance Creative Web Designer / Developer}
+\textbf{Full-Stack Engineering Intern} \hfill 2025 -- Present\\
+\textit{Currents Systems Inc. (DBA Visor)} \hfill Columbus, OH / Remote
 \begin{itemize}
-  \item Designed and launched 3+ websites for local organizations.
-  \item Helped clients improve their online presence and community engagement.
-  \item Delivered responsive, modern designs focused on usability and branding.
+  \item Built interactive data visualizations, including a filterable scatter plot for large vehicle datasets.
+  \item Developed and maintained full-stack features in a production application while working directly with the CTO.
+  \item Used approved AI tools to generate and process vehicle images while following company data and IP policies.
 \end{itemize}
 
-\textbf{Full Stack Engineering Intern — Currents Systems Inc (DBA Visor)} — Remote (Ohio)
+\textbf{Freelance Creative Developer} \hfill 2023 -- Present\\
+\textit{Self-employed} \hfill Remote
 \begin{itemize}
-  \item Built interactive data visualizations, including filterable scatter plots for large datasets.
-  \item Developed and maintained full stack features in a production environment.
-  \item Used approved AI tools to generate and process vehicle imagery while following data security policies.
-  \item Worked directly with the CTO in a remote, part-time engineering role.
+  \item Designed and launched 3+ responsive websites and web applications for local organizations and small businesses.
+  \item Managed projects from requirements and interface design through development, deployment, and client handoff.
+  \item Built reusable React and Next.js interfaces with accessible interactions, purposeful motion, and fast page loads.
 \end{itemize}
 
-\textbf{Contract Software Developer — Independent Contractor} — Remote (Ohio)
+\textbf{Contract Software Developer} \hfill 2025 -- Present\\
+\textit{Vacova} \hfill Remote
 \begin{itemize}
-  \item Provided ongoing software and web development support for multiple clients.
-  \item Implemented new features, fixed bugs, and maintained production systems.
-  \item Delivered clean code, documentation, and technical support on a project basis.
+  \item Implemented production features, fixed bugs, and maintained existing software across client projects.
+  \item Integrated code changes and delivered clear documentation and technical support for each handoff.
 \end{itemize}
+
+% ---------- PROJECTS ----------
+\section*{Projects}
+\textbf{LoveUI} \hfill \href{https://www.loveui.dev}{loveui.dev} \;|\; \href{https://github.com/loveconnor/loveui}{github.com/loveconnor/loveui}\\
+\textit{Next.js, React, TypeScript, Tailwind CSS, Fumadocs}
+\begin{itemize}
+  \item Built and maintain an open-source, source-first UI library with reusable components, application blocks, charts, and documentation.
+  \item Designed and shipped 4,167 icons plus an AI skill pack that helps coding agents build consistent, accessible interfaces.
+  \item Published an npm CLI so developers can add and own individual components without installing a large design-system package.
+\end{itemize}
+
+\textbf{Portfolio} \hfill \href{https://www.connorlove.com}{connorlove.com} \;|\; \href{https://github.com/loveconnor/portfolio}{github.com/loveconnor/portfolio}\\
+\textit{React, Next.js, JavaScript, CSS, GLSL, Vercel}
+\begin{itemize}
+  \item Designed and built a responsive portfolio that presents selected projects, services, and professional experience.
+  \item Added custom motion and 3D interactions, responsive layouts, and a serverless contact form; deployed on Vercel.
+\end{itemize}
+
+% ---------- RESEARCH AND HONORS ----------
+\section*{Research \& Honors}
+\textbf{Choose Ohio First Scholar and Student Researcher} \hfill Kent State University, 2024 -- 2025
+\begin{itemize}
+  \item Developed algorithms and an interface for keyword-based community search in spatial-social networks.
+  \item Presented the work at a Kent State research conference in April 2025.
+\end{itemize}
+\textbf{3rd Place, Kent Hack Enough Hackathon} -- EduSynapse \hfill Feb. 2025
 
 % ---------- TECHNICAL SKILLS ----------
 \section*{Technical Skills}
-
-\textbf{Languages:} TypeScript, JavaScript, Java, C++, Python, SQL, HTML/CSS
-
-\vspace{1pt}
-\textbf{Frameworks \& Libraries:} React, Next.js, Three.js, GSAP, Framer Motion, Tailwind CSS, Material UI
-
-\vspace{1pt}
-\textbf{Backend \& Databases:} Node.js, Supabase, PostgreSQL, REST APIs
-
-\vspace{1pt}
-\textbf{Tools \& Platforms:} Docker, Vercel, Figma, Photoshop, Illustrator
-
-\vspace{1pt}
-\textbf{AI \& APIs:} OpenAI API, Google Gemini, Claude, ElevenLabs, Serper API
+\textbf{Languages:} TypeScript, JavaScript, Java, C++, Python, SQL, HTML/CSS\\
+\textbf{Web:} React, Next.js, Node.js, Tailwind CSS, Three.js, Supabase, PostgreSQL, REST APIs\\
+\textbf{Tools:} Git, Docker, Vercel, Figma, Photoshop, Illustrator; OpenAI, Gemini, and Claude APIs
 
 \end{document}
